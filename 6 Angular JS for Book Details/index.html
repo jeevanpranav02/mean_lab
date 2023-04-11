@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="UTF-8" />
+    <title>AngularJS Book Details</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script src="bookController.js"></script>
+  </head>
+
+  <body>
+    <div ng-controller="BookController">
+      <h1>{{ book.title }}</h1>
+      <h3>Author: {{ book.author }}</h3>
+      <p>ISBN: {{ book.isbn }}</p>
+      <p>Availability: {{ book.available ? 'Yes' : 'No' }}</p>
+      <p>
+        Issued status:
+        <span ng-if="book.issued">Issued</span>
+        <span ng-if="!book.issued">Not Issued</span>
+      </p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bicycle Models</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  </head>
+  <body ng-app="myApp">
+    <div ng-controller="myCtrl">
+      <h1>Bicycle Models</h1>
+      <ul>
+        <li ng-repeat="model in models">
+          {{ model.name }} - {{ model.price }}
+        </li>
+      </ul>
+    </div>
+
+    <script>
+      var app = angular.module("myApp", []);
+      app.controller("myCtrl", function ($scope) {
+        $scope.models = [
+          { name: "Mountain Bike", price: 500 },
+          { name: "Road Bike", price: 700 },
+          { name: "Hybrid Bike", price: 600 },
+        ];
+      });
+    </script>
+  </body>
+</html>

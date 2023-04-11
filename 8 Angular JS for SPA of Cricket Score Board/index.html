@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cricket Score Board</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script src="scoreController.js"></script>
+  </head>
+
+  <body>
+    <div ng-controller="ScoreController">
+      <h1>Cricket Score Board</h1>
+      <table>
+        <tr>
+          <th>Team</th>
+          <th>Score</th>
+          <th>Overs</th>
+        </tr>
+        <tr ng-repeat="team in teams">
+          <td>{{ team.name }}</td>
+          <td>{{ team.score }}</td>
+          <td>{{ team.overs }}</td>
+        </tr>
+      </table>
+      <form ng-submit="addRun(team)">
+        <select
+          ng-model="team"
+          ng-options="team as team.name for team in teams"
+        ></select>
+        <input type="number" ng-model="runs" placeholder="Runs..." />
+        <button type="submit">Add Run</button>
+      </form>
+    </div>
+  </body>
+</html>

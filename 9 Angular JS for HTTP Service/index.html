@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <title>HTTP Service Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+  </head>
+  <body ng-controller="MainController">
+    <h1>HTTP Service Example</h1>
+    <p>Fetching data from: {{ apiUrl }}</p>
+    <div ng-model="post">
+      <h2>{{ post.login }}</h2>
+      <p>{{ post.name }}</p>
+      <p>{{ post.company }}</p>
+    </div>
+  </body>
+</html>
